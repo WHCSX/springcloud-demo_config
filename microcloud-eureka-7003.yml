@@ -10,7 +10,7 @@ spring:
   security: #SpringSecurity的安全配置项
     user:
       name: edmin
-      password: mldnjava
+      password: '{cipher}d78117b1bac4594a88bb93bd8884dfe3b2816b3ca0a6baf349f9b3237c68bdc0'
 server:
   port: 7003
 eureka: #eureka实例定义
@@ -29,7 +29,7 @@ spring:
   security: #SpringSecurity的安全配置项
     user:
       name: edmin
-      password: mldnjava
+      password: '{cipher}d78117b1bac4594a88bb93bd8884dfe3b2816b3ca0a6baf349f9b3237c68bdc0'
 server:
   port: 7003
 eureka: #eureka实例定义
@@ -48,7 +48,7 @@ spring:
   security: #SpringSecurity的安全配置项
     user:
       name: edmin
-      password: mldnjava
+      password: '{cipher}d78117b1bac4594a88bb93bd8884dfe3b2816b3ca0a6baf349f9b3237c68bdc0'
 server:
   port: 7003
 eureka: #eureka实例定义
