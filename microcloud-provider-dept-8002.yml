@@ -1,0 +1,51 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+  port: 8002
+
+mybatis:  #配置MyBatis
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.bjsxt.vo
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+
+spring:
+  profiles: dev
+  application:  #为此微服务设置一个名字
+    name: microcloud-provider-dept
+  datasource: #配置Druid数据库
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mldn8002?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: 123456
+    filters: stat
+    dbcp2:  #配置数据库连接池
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+
+security:
+  sessions: stateless
+
+eureka:
+  client: #客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://edmin:mldnjava@eureka-7001.com:7001/eureka/,http://edmin:mldnjava@eureka-7002.com:7002/eureka/,http://edmin:mldnjava@eureka-7003.com:7003/eureka/
+  instance:
+    instance-id: dept-8002.com  #在信息列表时显示主机名称
+    prefer-ip-address: true #访问的路径变为IP地址
+
+#追加info的相关信息
+info:
+  app:
+    name: microcloud-provider-dept-8002
+    version: v1.0.0
+  company:
+    name: www.mldn.com
+  pom:
+    artifactld: $project.artifactId$
+    version: $project.version$
