@@ -1,61 +1,61 @@
 spring:
   profiles:
     active: 
-      - dev-7001
+      - dev-7003
 ---
 spring:
-  profiles: dev-7001
+  profiles: dev-7003
   application:  #为此微服务设置一个名字
-    name: eureka-7001.com
+    name: eureka-7003.com
   security: #SpringSecurity的安全配置项
     user:
       name: edmin
       password: mldnjava
 server:
-  port: 7001
+  port: 7003
 eureka: #eureka实例定义
   instance:
-    hostname: eureka-7001.com #定义Eureka实例所在的主机名称
+    hostname: eureka-7003.com #定义Eureka实例所在的主机名称
   client:
     register-with-eureka: false # 此应用为注册中心，false：不向注册中心注册自己
     fetch-registry: false # 注册中心职责是维护服务实例，false：不检索服务
     service-url:  #解决：Eureka 注册中心一直报Connect to localhost:8761 time out 的问题，详见收藏的网址；设置HA机制
-      defaultZone: http://edmin:mldnjava@eureka-7002.com:7002/eureka/,http://edmin:mldnjava@eureka-7003.com:7003/eureka/
+      defaultZone: http://edmin:mldnjava@eureka-7001.com:7001/eureka/,http://edmin:mldnjava@eureka-7002.com:7002/eureka/
 ---
 spring:
-  profiles: beta-7001
+  profiles: beta-7003
   application:  #为此微服务设置一个名字
-    name: eureka-7001.com
+    name: eureka-7003.com
   security: #SpringSecurity的安全配置项
     user:
       name: edmin
       password: mldnjava
 server:
-  port: 7001
+  port: 7003
 eureka: #eureka实例定义
   instance:
-    hostname: eureka-7001.com #定义Eureka实例所在的主机名称
+    hostname: eureka-7003.com #定义Eureka实例所在的主机名称
   client:
     register-with-eureka: false # 此应用为注册中心，false：不向注册中心注册自己
     fetch-registry: false # 注册中心职责是维护服务实例，false：不检索服务
     service-url:  #解决：Eureka 注册中心一直报Connect to localhost:8761 time out 的问题，详见收藏的网址；设置HA机制
-      defaultZone: http://edmin:mldnjava@eureka-7002.com:7002/eureka/,http://edmin:mldnjava@eureka-7003.com:7003/eureka/
+      defaultZone: http://edmin:mldnjava@eureka-7001.com:7001/eureka/,http://edmin:mldnjava@eureka-7002.com:7002/eureka/
 ---
 spring:
-  profiles: product-7001
+  profiles: product-7003
   application:  #为此微服务设置一个名字
-    name: eureka-7001.com
+    name: eureka-7003.com
   security: #SpringSecurity的安全配置项
     user:
       name: edmin
       password: mldnjava
 server:
-  port: 7001
+  port: 7003
 eureka: #eureka实例定义
   instance:
-    hostname: eureka-7001.com #定义Eureka实例所在的主机名称
+    hostname: eureka-7003.com #定义Eureka实例所在的主机名称
   client:
     register-with-eureka: false # 此应用为注册中心，false：不向注册中心注册自己
     fetch-registry: false # 注册中心职责是维护服务实例，false：不检索服务
     service-url:  #解决：Eureka 注册中心一直报Connect to localhost:8761 time out 的问题，详见收藏的网址；设置HA机制
-      defaultZone: http://edmin:mldnjava@eureka-7002.com:7002/eureka/,http://edmin:mldnjava@eureka-7003.com:7003/eureka/
+      defaultZone: http://edmin:mldnjava@eureka-7001.com:7001/eureka/,http://edmin:mldnjava@eureka-7002.com:7002/eureka/
