@@ -1,10 +1,10 @@
 spring:
   profiles:
     active: 
-      - dev-7001
+      - dev
 ---
 spring:
-  profiles: dev-7001
+  profiles: dev
   application:  #为此微服务设置一个名字
     name: eureka-7001.com
   security: #SpringSecurity的安全配置项
@@ -23,7 +23,7 @@ eureka: #eureka实例定义
       defaultZone: http://edmin:mldnjava@eureka-7002.com:7002/eureka/,http://edmin:mldnjava@eureka-7003.com:7003/eureka/
 ---
 spring:
-  profiles: beta-7001
+  profiles: beta
   application:  #为此微服务设置一个名字
     name: eureka-7001.com
   security: #SpringSecurity的安全配置项
@@ -42,7 +42,7 @@ eureka: #eureka实例定义
       defaultZone: http://edmin:mldnjava@eureka-7002.com:7002/eureka/,http://edmin:mldnjava@eureka-7003.com:7003/eureka/
 ---
 spring:
-  profiles: product-7001
+  profiles: product
   application:  #为此微服务设置一个名字
     name: eureka-7001.com
   security: #SpringSecurity的安全配置项
