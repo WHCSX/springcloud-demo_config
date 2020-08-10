@@ -27,6 +27,20 @@ spring:
       initial-size: 5
       max-total: 5
       max-wait-millis: 200
+  cloud:
+      bus:
+        enabled: true #启用bus总线
+  rabbitmq: #现在将集成RabbitMQ作为消息服务总线处理
+    host: 192.168.2.156   #RabbitMQ主机服务地址
+    port: 5672  #RabbitMQ的监听端口
+    username: mldnjava  #用户名
+    password: hello #密码
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
 
 security:
   sessions: stateless
